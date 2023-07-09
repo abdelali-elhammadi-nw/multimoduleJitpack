@@ -1,0 +1,148 @@
+databaseChangeLog:
+- changeSet:
+    id: 1680183290649-1
+    author: lenovo (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: purchase_id
+            type: UUID
+        - column:
+            name: url
+            type: VARCHAR(255)
+        tableName: medias
+- changeSet:
+    id: 1680183290649-2
+    author: lenovo (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: purchasesPK
+            name: id
+            type: UUID
+        - column:
+            constraints:
+              nullable: false
+            name: brand
+            type: VARCHAR(255)
+        - column:
+            name: model
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: price
+            type: FLOAT8
+        - column:
+            constraints:
+              nullable: false
+            name: rating
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: store
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: user_id
+            type: UUID
+        tableName: purchases
+- changeSet:
+    id: 1680183290649-3
+    author: lenovo (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: usersPK
+            name: id
+            type: UUID
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: email
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: employment_date
+            type: date
+        - column:
+            name: enabled
+            type: BOOLEAN
+        - column:
+            name: name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: password
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: role
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: should_receive_approval_notifications
+            type: BOOLEAN
+        - column:
+            constraints:
+              nullable: false
+            name: should_receive_mail_notifications
+            type: BOOLEAN
+        tableName: users
+- changeSet:
+    id: 1680183290649-4
+    author: lenovo (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: email
+        constraintName: UC_USERSEMAIL_COL
+        tableName: users
+- changeSet:
+    id: 1680183290649-5
+    author: lenovo (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: purchase_id
+        baseTableName: medias
+        constraintName: FK5lp37od5elqs2ymvg8q5ykib6
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: purchases
+        validate: true
+- changeSet:
+    id: 1680183290649-6
+    author: lenovo (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: purchases
+        constraintName: FKm0ndjymn9p747pfp4515pio8i
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: users
+        validate: true
+

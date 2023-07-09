@@ -1,0 +1,86 @@
+databaseChangeLog:
+- changeSet:
+    id: 1679752747555-1
+    author: lenovo (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: email
+            type: varchar(255)
+        tableName: users
+- changeSet:
+    id: 1679752747555-2
+    author: lenovo (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: employment_date
+            type: date
+        tableName: users
+- changeSet:
+    id: 1679752747555-3
+    author: lenovo (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: role
+            type: varchar(255)
+        tableName: users
+- changeSet:
+    id: 1679752747555-4
+    author: lenovo (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: email
+        constraintName: UC_USERSEMAIL_COL
+        tableName: users
+- changeSet:
+    id: 1679752747555-5
+    author: lenovo (generated)
+    changes:
+    - dropForeignKeyConstraint:
+        baseTableName: user_role
+        constraintName: FKj345gk1bovqvfame88rcx7yyx
+- changeSet:
+    id: 1679752747555-6
+    author: lenovo (generated)
+    changes:
+    - dropForeignKeyConstraint:
+        baseTableName: user_role
+        constraintName: FKt7e7djp752sqn6w22i6ocqy6q
+- changeSet:
+    id: 1679752747555-7
+    author: lenovo (generated)
+    changes:
+    - dropUniqueConstraint:
+        constraintName: uc_usersusername_col
+        tableName: users
+- changeSet:
+    id: 1679752747555-8
+    author: lenovo (generated)
+    changes:
+    - dropTable:
+        tableName: roles
+- changeSet:
+    id: 1679752747555-9
+    author: lenovo (generated)
+    changes:
+    - dropTable:
+        tableName: user_role
+- changeSet:
+    id: 1679752747555-10
+    author: lenovo (generated)
+    changes:
+    - dropColumn:
+        columnName: username
+        tableName: users
+
