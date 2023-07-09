@@ -1,0 +1,26 @@
+databaseChangeLog:
+- changeSet:
+    id: 1679996912412-1
+    author: lenovo (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: should_receive_approval_notifications
+            type: boolean
+        tableName: users
+- changeSet:
+    id: 1679996912412-2
+    author: lenovo (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: should_receive_mail_notifications
+            type: boolean
+        tableName: users
+
