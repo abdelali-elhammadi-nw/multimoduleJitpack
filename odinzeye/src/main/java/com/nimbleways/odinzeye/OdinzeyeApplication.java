@@ -10,6 +10,7 @@ public class OdinzeyeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OdinzeyeApplication.class, args);
+		System.out.println("hola");
 	}
 
 }
